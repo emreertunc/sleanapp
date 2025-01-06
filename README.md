@@ -1,18 +1,18 @@
-# Slean - macOS Media Management App
+# Slean - iOS Media Management App
 
-Slean is a macOS app designed to help you organize your photo and video collection.
+Slean is a iOS app designed to help you organize your photo and video collection.
 
 ## 🌟 Features
 
 - **Smart Sorting**: Sort your media by size and date
-- **Advanced Filtering**: View photos and videos separately
+- **Advanced Filtering**: View photos and videos separately and filter by category
 - **Easy Deletion**: Single or multiple deletion feature
 - **Detailed Info**: Detailed size information for each media
 
 ## 🚀 How to Use?
 
 1. Use the sort button on the left to sort your media by your preferred criteria
-2. Use the filter button in the middle to view photos or videos separately
+2. Use the filter button in the middle to view photos or videos separately and filter by category
 3. Tap 'Select' or long press an item for multiple selection
 4. Delete selected media with a single tap
 
