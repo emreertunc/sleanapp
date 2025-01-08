@@ -3,6 +3,7 @@
 Slean is a iOS app designed to help you organize your photo and video collection.
 
 https://emreertunc.github.io/sleanapp/
+
 https://apps.apple.com/tr/app/slean/id6740009265
 
 ## 🌟 Features
