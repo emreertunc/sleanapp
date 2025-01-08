@@ -27,6 +27,7 @@
         }
  
         .container {
+            position: relative;
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
@@ -225,158 +226,379 @@
                 order: 1;
             }
         }
+
+        .page-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 9999;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .language-btn:hover {
+            opacity: 1;
+        }
+
+        .language-btn.active {
+            opacity: 1;
+            box-shadow: 0 0 0 2px var(--primary-color);
+            border-radius: 4px;
+        }
     </style>
  </head>
 
 <body>
-    <div class="container">
-        <header>
-            <img src="images/icon.png" alt="Slean App Icon" class="app-icon">
-            <h1>Slean</h1>
-            <p class="tagline">Easily manage your photos and videos</p>
-        </header>
-
-        <section class="app-store">
-            <div class="store-content">
-                <div class="availability">
-                    <span class="status-badge">NOW AVAILABLE</span>
-                    <h2>Download Slean on the App Store</h2>
-                    <p>Organize your media library effortlessly</p>
-                </div>
-                <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
-                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
-                        alt="Download on the App Store" class="store-badge">
-                </a>
-            </div>
-            <div class="app-preview">
-                <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto" class="preview-video">
-                    <source src="images/slean_now_available_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </section>
-
-        <section>
-            <h2>About App</h2>
-            <p>Slean is a powerful macOS app that helps you keep your photo and video collection organized. You can sort
-                your media files by size and date, filter them, and easily delete unnecessary ones.</p>
-        </section>
-
-        <section>
-            <h2>How to Use?</h2>
-            <div class="usage-steps">
-                <div class="step">
-                    <h3>1. Media Management</h3>
-                    <ul>
-                        <li>Use top-left arrows button to sort by size/date</li>
-                        <li>Middle filter button for photos/videos/size filtering</li>
-                        <li>Filter button for favorites and screenshots</li>
-                    </ul>
-                </div>
-                
-                <div class="step">
-                    <h3>2. Selection Options</h3>
-                    <ul>
-                        <li>Tap 'Select' at bottom</li>
-                        <li>Long press any item</li>
-                        <li>Drag across items for multiple selection</li>
-                    </ul>
-                </div>
-        
-                <div class="step">
-                    <h3>3. Additional Features</h3>
-                    <ul>
-                        <li>Pull down to refresh library</li>
-                        <li>Tap item for full-screen view</li>
-                        <li>Pinch to zoom in full-screen</li>
-                        <li>Double tap to reset zoom</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Features</h2>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">↕️</div>
-                    <h3>Smart Sorting</h3>
-                    <p>Sort media by size and date in ascending or descending order</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Advanced Filtering</h3>
-                    <p>Filter by photos, videos, screenshots, favorites, and file size presets</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🗑️</div>
-                    <h3>Easy Selection & Deletion</h3>
-                    <p>Single tap, long press, or drag-select for multiple items</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📊</div>
-                    <h3>Detailed Info</h3>
-                    <p>File size and creation date for each media item</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <h3>iPad Optimized</h3>
-                    <p>Enhanced UI and grid layout for iPad users</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Interactive Experience</h3>
-                    <p>Pull-to-refresh, image zoom & pan, and smooth animations</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Size-Based Filtering</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Preset Filters</h3>
-                    <p>Quickly find large files with size presets: 10MB, 50MB, 100MB, 500MB, 1GB, 2GB</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>iOS Screenshots</h2>
-            <div class="screenshots">
-                <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean App Screenshot 1" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean App Screenshot 2" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean App Screenshot 3" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean App Screenshot 4" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean App Screenshot 5" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean App Screenshot 6" class="screenshot">
-                <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean App Screenshot 7" class="screenshot">
-            </div>
-        </section>
-
-        <section>
-            <h2>ipadOS Screenshots</h2>
-            <div class="screenshots">
-                <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean App Screenshot 8" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean App Screenshot 9" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean App Screenshot 10" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean App Screenshot 11" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean App Screenshot 12" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean App Screenshot 13" class="screenshot">
-                <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean App Screenshot 14" class="screenshot">
-            </div>
-        </section>
-
-        <section class="contact">
-            <h2>Contact</h2>
-            <p>For any questions, suggestions, or feedback, feel free to contact me:</p>
-            <p><a href="mailto:emre@ertunc.com?subject=About%20Slean">emre@ertunc.com</a></p>
-        </section>
-
-        <footer>
-            <p>© 2024 Slean. All rights reserved.</p>
-        </footer>
+    <div class="language-selector">
+        <button class="language-btn" onclick="changeLanguage('tr')" id="tr-btn">
+            🇹🇷
+        </button>
+        <button class="language-btn" onclick="changeLanguage('en')" id="en-btn">
+            🇬🇧
+        </button>
     </div>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <div id="tr-content" style="display: none;">
+                <header>
+                    <img src="images/icon.png" alt="Slean Uygulama İkonu" class="app-icon">
+                    <h1>Slean</h1>
+                    <p class="tagline">Fotoğraf ve videolarınızı kolayca yönetin</p>
+                </header>
+
+                <section class="app-store">
+                    <div class="store-content">
+                        <div class="availability">
+                            <span class="status-badge">KULLANIMA HAZIR</span>
+                            <h2>App Store'dan Slean'i İndirin</h2>
+                            <p>Medya kütüphanenizi zahmetsizce düzenleyin</p>
+                        </div>
+                        <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr"
+                                alt="App Store'dan İndir" class="store-badge">
+                        </a>
+                    </div>
+                    <div class="app-preview">
+                        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto" class="preview-video">
+                            <source src="images/slean_now_available_video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Uygulama Hakkında</h2>
+                    <p>Slean, fotoğraf ve video koleksiyonunuzu düzenli tutmanıza yardımcı olan güçlü bir iOS uygulamasıdır. Medya dosyalarınızı boyuta ve tarihe göre sıralayabilir, filtreleyebilir ve gereksiz olanları kolayca silebilirsiniz.</p>
+                </section>
+
+                <section>
+                    <h2>Nasıl Kullanılır?</h2>
+                    <div class="usage-steps">
+                        <div class="step">
+                            <h3>1. Medya Yönetimi</h3>
+                            <ul>
+                                <li>Boyut/tarih sıralaması için sol üst ok butonunu kullanın</li>
+                                <li>Fotoğraf/video/boyut filtrelemesi için orta filtre butonunu kullanın</li>
+                                <li>Favoriler ve ekran görüntüleri için filtre butonunu kullanın</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step">
+                            <h3>2. Seçim Seçenekleri</h3>
+                            <ul>
+                                <li>Alt kısımdaki 'Seç' butonuna dokunun</li>
+                                <li>Herhangi bir öğeye uzun basın</li>
+                                <li>Çoklu seçim için öğeler üzerinde sürükleyin</li>
+                            </ul>
+                        </div>
+                
+                        <div class="step">
+                            <h3>3. Ek Özellikler</h3>
+                            <ul>
+                                <li>Kütüphaneyi yenilemek için aşağı çekin</li>
+                                <li>Tam ekran görüntülemek için öğeye dokunun</li>
+                                <li>Tam ekranda yakınlaştırmak için sıkıştırın</li>
+                                <li>Yakınlaştırmayı sıfırlamak için çift dokunun</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Özellikler</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">↕️</div>
+                            <h3>Akıllı Sıralama</h3>
+                            <p>Medyayı boyuta ve tarihe göre artan veya azalan sırada sıralayın</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔍</div>
+                            <h3>Gelişmiş Filtreleme</h3>
+                            <p>Fotoğrafları, videoları, ekran görüntülerini, favorileri ve dosya boyutlarını filtreleme</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔍🗑️</div>
+                            <h3>Kolay Seçim ve Silme</h3>
+                            <p>Tek dokunuş, uzun basma veya sürükleyerek çoklu seçim</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📊</div>
+                            <h3>Detaylı Bilgi</h3>
+                            <p>Her medya öğesi için dosya boyutu ve oluşturma tarihi</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📱</div>
+                            <h3>iPad Uyumlu</h3>
+                            <p>iPad kullanıcıları için geliştirilmiş arayüz ve ızgara düzeni</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔍</div>
+                            <h3>Etkileşimli Deneyim</h3>
+                            <p>Yenilemek için aşağı çekme, görüntü yakınlaştırma ve kaydırma, akıcı animasyonlar</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Boyuta Göre Filtreleme</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>Hazır Filtreler</h3>
+                            <p>Büyük dosyaları hızlıca bulmak için hazır boyut seçenekleri: 10MB, 50MB, 100MB, 500MB, 1GB, 2GB</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>iOS Ekran Görüntüleri</h2>
+                    <div class="screenshots">
+                        <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 4" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 5" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 6" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 7" class="screenshot">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>iPadOS Ekran Görüntüleri</h2>
+                    <div class="screenshots">
+                        <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 8" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 9" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 10" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 11" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 12" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 13" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 14" class="screenshot">
+                    </div>
+                </section>
+
+                <section class="contact">
+                    <h2>İletişim</h2>
+                    <p>Herhangi bir soru, öneri veya geri bildirim için benimle iletişime geçebilirsiniz:</p>
+                    <p><a href="mailto:emre@ertunc.com?subject=Slean%20Hakkında">emre@ertunc.com</a></p>
+                </section>
+
+                <footer>
+                    <p>© 2024 Slean. Tüm hakları saklıdır.</p>
+                </footer>
+            </div>
+
+            <div id="en-content">
+                <header>
+                    <img src="images/icon.png" alt="Slean App Icon" class="app-icon">
+                    <h1>Slean</h1>
+                    <p class="tagline">Easily manage your photos and videos</p>
+                </header>
+
+                <section class="app-store">
+                    <div class="store-content">
+                        <div class="availability">
+                            <span class="status-badge">NOW AVAILABLE</span>
+                            <h2>Download Slean on the App Store</h2>
+                            <p>Organize your media library effortlessly</p>
+                        </div>
+                        <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
+                                alt="Download on the App Store" class="store-badge">
+                        </a>
+                    </div>
+                    <div class="app-preview">
+                        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto" class="preview-video">
+                            <source src="images/slean_now_available_video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>About App</h2>
+                    <p>Slean is a powerful iOS app that helps you keep your photo and video collection organized. You can sort
+                        your media files by size and date, filter them, and easily delete unnecessary ones.</p>
+                </section>
+
+                <section>
+                    <h2>How to Use?</h2>
+                    <div class="usage-steps">
+                        <div class="step">
+                            <h3>1. Media Management</h3>
+                            <ul>
+                                <li>Use top-left arrows button to sort by size/date</li>
+                                <li>Middle filter button for photos/videos/size filtering</li>
+                                <li>Filter button for favorites and screenshots</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step">
+                            <h3>2. Selection Options</h3>
+                            <ul>
+                                <li>Tap 'Select' at bottom</li>
+                                <li>Long press any item</li>
+                                <li>Drag across items for multiple selection</li>
+                            </ul>
+                        </div>
+                
+                        <div class="step">
+                            <h3>3. Additional Features</h3>
+                            <ul>
+                                <li>Pull down to refresh library</li>
+                                <li>Tap item for full-screen view</li>
+                                <li>Pinch to zoom in full-screen</li>
+                                <li>Double tap to reset zoom</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Features</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">↕️</div>
+                            <h3>Smart Sorting</h3>
+                            <p>Sort media by size and date in ascending or descending order</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔍</div>
+                            <h3>Advanced Filtering</h3>
+                            <p>Filter by photos, videos, screenshots, favorites, and file size presets</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🗑️</div>
+                            <h3>Easy Selection & Deletion</h3>
+                            <p>Single tap, long press, or drag-select for multiple items</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📊</div>
+                            <h3>Detailed Info</h3>
+                            <p>File size and creation date for each media item</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📱</div>
+                            <h3>iPad Optimized</h3>
+                            <p>Enhanced UI and grid layout for iPad users</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Interactive Experience</h3>
+                            <p>Pull-to-refresh, image zoom & pan, and smooth animations</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Size-Based Filtering</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>Preset Filters</h3>
+                            <p>Quickly find large files with size presets: 10MB, 50MB, 100MB, 500MB, 1GB, 2GB</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>iOS Ekran Görüntüleri</h2>
+                    <div class="screenshots">
+                        <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 4" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 5" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 6" class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 7" class="screenshot">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>iPadOS Ekran Görüntüleri</h2>
+                    <div class="screenshots">
+                        <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 8" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 9" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 10" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 11" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 12" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 13" class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 14" class="screenshot">
+                    </div>
+                </section>
+
+                <section class="contact">
+                    <h2>Contact</h2>
+                    <p>For any questions, suggestions, or feedback, feel free to contact me:</p>
+                    <p><a href="mailto:emre@ertunc.com?subject=About%20Slean">emre@ertunc.com</a></p>
+                </section>
+
+                <footer>
+                    <p>© 2024 Slean. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            const trContent = document.getElementById('tr-content');
+            const enContent = document.getElementById('en-content');
+            const trBtn = document.getElementById('tr-btn');
+            const enBtn = document.getElementById('en-btn');
+
+            if (lang === 'tr') {
+                trContent.style.display = 'block';
+                enContent.style.display = 'none';
+                trBtn.classList.add('active');
+                enBtn.classList.remove('active');
+            } else {
+                trContent.style.display = 'none';
+                enContent.style.display = 'block';
+                trBtn.classList.remove('active');
+                enBtn.classList.add('active');
+            }
+        }
+
+        // Tarayıcı dilini kontrol et ve ona göre içeriği göster
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            changeLanguage(userLang.startsWith('tr') ? 'tr' : 'en');
+        });
+    </script>
 </body>
 
 </html>
