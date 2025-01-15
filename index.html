@@ -259,6 +259,23 @@
             box-shadow: 0 0 0 2px var(--primary-color);
             border-radius: 4px;
         }
+
+        .duplicate-feature {
+            background: linear-gradient(45deg, #007AFF, #5856D6);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 8px;
+        }
+
+        .feature-highlight {
+            border: 2px solid var(--primary-color);
+            border-radius: 24px;
+            padding: 25px;
+            margin: 15px 0;
+            background: rgba(0, 122, 255, 0.05);
+        }
     </style>
 </head>
 
@@ -295,8 +312,9 @@
                     </div>
                     <div class="app-preview">
                         <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto"
-                            class="preview-video">
-                            <source src="images/slean_now_available_video.mp4" type="video/mp4">
+                            class="preview-video" crossorigin="anonymous">
+                            <source src="images/slean_now_available_video.mp4" 
+                            type="video/mp4" codecs="avc1.42E01E,mp4a.40.2">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -320,9 +338,17 @@
                                 <li>Favoriler ve ekran görüntüleri için filtre butonunu kullanın</li>
                             </ul>
                         </div>
-
                         <div class="step">
-                            <h3>2. Seçim Seçenekleri</h3>
+                            <h3>2. Tekrarlanan Fotoğraf Yönetimi <span class="duplicate-feature">YENİ</span></h3>
+                            <ul>
+                                <li>Benzer fotoğrafları bulmak için tarama butonunu kullanın</li>
+                                <li>Tekrarlanan fotoğrafları renkli gruplar halinde görüntüleyin</li>
+                                <li>İstenmeyen tekrarlanan fotoğrafları kolayca seçin ve silin</li>
+                                <li>İlerleme göstergesi tarama durumunu gösterir</li>
+                            </ul>
+                        </div>
+                        <div class="step">
+                            <h3>3. Seçim Seçenekleri</h3>
                             <ul>
                                 <li>Alt kısımdaki 'Seç' butonuna dokunun</li>
                                 <li>Herhangi bir öğeye uzun basın</li>
@@ -331,7 +357,7 @@
                         </div>
 
                         <div class="step">
-                            <h3>3. Ek Özellikler</h3>
+                            <h3>4. Ek Özellikler</h3>
                             <ul>
                                 <li>Kütüphaneyi yenilemek için aşağı çekin</li>
                                 <li>Tam ekran görüntülemek için öğeye dokunun</li>
@@ -349,6 +375,11 @@
                             <div class="feature-icon">↕️</div>
                             <h3>Akıllı Sıralama</h3>
                             <p>Medyayı boyuta ve tarihe göre artan veya azalan sırada sıralayın</p>
+                        </div>
+                        <div class="feature feature-highlight">
+                            <div class="feature-icon">👥</div>
+                            <h3>Tekrarlanan Fotoğraf Tespiti <span class="duplicate-feature">YENİ</span></h3>
+                            <p>Boyut karşılaştırması ve görsel analiz kullanarak tekrarlanan fotoğrafları tespit eder. Tekrarlananlar renkli olarak gruplanır.</p>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">🔍</div>
@@ -487,9 +518,17 @@
                                 <li>Filter button for favorites and screenshots</li>
                             </ul>
                         </div>
-
                         <div class="step">
-                            <h3>2. Selection Options</h3>
+                            <h3>2. Duplicate Management<span class="duplicate-feature">NEW</span></h3>
+                            <ul>
+                                <li>Use the duplicate scan button to find similar photos</li>
+                                <li>View color-coded groups of duplicate images</li>
+                                <li>Easily select and remove unwanted duplicates</li>
+                                <li>Progress indicator shows scanning status</li>
+                            </ul>
+                        </div>
+                        <div class="step">
+                            <h3>3. Selection Options</h3>
                             <ul>
                                 <li>Tap 'Select' at bottom</li>
                                 <li>Long press any item</li>
@@ -498,7 +537,7 @@
                         </div>
 
                         <div class="step">
-                            <h3>3. Additional Features</h3>
+                            <h3>4. Additional Features</h3>
                             <ul>
                                 <li>Pull down to refresh library</li>
                                 <li>Tap item for full-screen view</li>
@@ -516,6 +555,11 @@
                             <div class="feature-icon">↕️</div>
                             <h3>Smart Sorting</h3>
                             <p>Sort media by size and date in ascending or descending order</p>
+                        </div>
+                        <div class="feature feature-highlight">
+                            <div class="feature-icon">👥</div>
+                            <h3>Duplicate Detection <span class="duplicate-feature">NEW</span></h3>
+                            <p>Advanced duplicate photo detection using size comparison and perceptual hashing. Color-coded groups for easy identification.</p>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">🔍</div>
@@ -556,7 +600,7 @@
                 </section>
 
                 <section>
-                    <h2>iOS Ekran Görüntüleri</h2>
+                    <h2>iOS Screenshots</h2>
                     <div class="screenshots">
                         <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
                             class="screenshot">
@@ -572,11 +616,15 @@
                             class="screenshot">
                         <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 7"
                             class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 8"
+                            class="screenshot">
+                        <img src="images/iphone_14_pro_max_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 9"
+                            class="screenshot">
                     </div>
                 </section>
 
                 <section>
-                    <h2>iPadOS Ekran Görüntüleri</h2>
+                    <h2>iPadOS Screenshots</h2>
                     <div class="screenshots">
                         <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 8"
                             class="screenshot">
@@ -591,6 +639,10 @@
                         <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 13"
                             class="screenshot">
                         <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 14"
+                            class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 15"
+                            class="screenshot">
+                        <img src="images/ipad_pro_13_inch_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 16"
                             class="screenshot">
                     </div>
                 </section>
