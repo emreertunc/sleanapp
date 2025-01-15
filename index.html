@@ -151,8 +151,9 @@
         }
 
         .store-badge {
-            height: 40px;
-            margin-top: 20px;
+            height: 80px;
+            margin-top: 40px;
+            display: block;
         }
 
         .app-preview {
@@ -214,8 +215,10 @@
             }
 
             .app-store {
-                grid-template-columns: 1fr;
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px;
             }
 
             .store-content {
@@ -224,6 +227,35 @@
 
             .app-preview {
                 order: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .app-store {
+                flex-direction: row;
+            }
+
+            .store-content {
+                flex: 1;
+            }
+
+            .app-preview {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .app-store {
+                text-align: center;
+            }
+
+            .store-badge {
+                margin: 25px auto;
+            }
+
+            .preview-video {
+                max-width: 100%;
+                margin-top: 20px;
             }
         }
 
@@ -304,17 +336,17 @@
                             <span class="status-badge">KULLANIMA HAZIR</span>
                             <h2>App Store'dan Slean'i İndirin</h2>
                             <p>Medya kütüphanenizi zahmetsizce düzenleyin</p>
+                            <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
+                                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr"
+                                    alt="App Store'dan İndir" class="store-badge">
+                            </a>
                         </div>
-                        <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr"
-                                alt="App Store'dan İndir" class="store-badge">
-                        </a>
                     </div>
                     <div class="app-preview">
                         <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto"
                             class="preview-video" crossorigin="anonymous">
-                            <source src="images/slean_now_available_video.mp4" 
-                            type="video/mp4" codecs="avc1.42E01E,mp4a.40.2">
+                            <source src="images/slean_now_available_video.mp4" type="video/mp4"
+                                codecs="avc1.42E01E,mp4a.40.2">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -379,7 +411,8 @@
                         <div class="feature feature-highlight">
                             <div class="feature-icon">👥</div>
                             <h3>Tekrarlanan Fotoğraf Tespiti <span class="duplicate-feature">YENİ</span></h3>
-                            <p>Boyut karşılaştırması ve görsel analiz kullanarak tekrarlanan fotoğrafları tespit eder. Tekrarlananlar renkli olarak gruplanır.</p>
+                            <p>Boyut karşılaştırması ve görsel analiz kullanarak tekrarlanan fotoğrafları tespit eder.
+                                Tekrarlananlar renkli olarak gruplanır.</p>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">🔍</div>
@@ -485,11 +518,11 @@
                             <span class="status-badge">NOW AVAILABLE</span>
                             <h2>Download Slean on the App Store</h2>
                             <p>Organize your media library effortlessly</p>
+                            <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
+                                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
+                                    alt="Download on the App Store" class="store-badge">
+                            </a>
                         </div>
-                        <a href="https://apps.apple.com/tr/app/slean/id6740009265" class="store-button">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us"
-                                alt="Download on the App Store" class="store-badge">
-                        </a>
                     </div>
                     <div class="app-preview">
                         <video autoplay loop muted playsinline controls controlslist="nodownload" preload="auto"
@@ -559,7 +592,8 @@
                         <div class="feature feature-highlight">
                             <div class="feature-icon">👥</div>
                             <h3>Duplicate Detection <span class="duplicate-feature">NEW</span></h3>
-                            <p>Advanced duplicate photo detection using size comparison and perceptual hashing. Color-coded groups for easy identification.</p>
+                            <p>Advanced duplicate photo detection using size comparison and perceptual hashing.
+                                Color-coded groups for easy identification.</p>
                         </div>
                         <div class="feature">
                             <div class="feature-icon">🔍</div>
