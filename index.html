@@ -340,6 +340,47 @@
             color: #000;
             /* Koyu siyah */
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            display: block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal .close {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .screenshot {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .screenshot:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 
@@ -859,6 +900,11 @@
         </div>
     </div>
 
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script>
         function changeLanguage(lang) {
             const trContent = document.getElementById('tr-content');
@@ -883,6 +929,38 @@
         document.addEventListener('DOMContentLoaded', function () {
             const userLang = navigator.language || navigator.userLanguage;
             changeLanguage(userLang.startsWith('tr') ? 'tr' : 'en');
+        });
+
+        // Modal için gerekli elementleri seç
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Tüm screenshot sınıfına sahip görsellere tıklama olayı ekle
+        document.querySelectorAll('.screenshot').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Çarpı işaretine tıklandığında modalı kapat
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Modal dışına tıklandığında modalı kapat
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // ESC tuşuna basıldığında modalı kapat
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                modal.style.display = "none";
+            }
         });
     </script>
 </body>
