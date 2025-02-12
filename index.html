@@ -282,6 +282,21 @@
             .app-preview {
                 order: 1;
             }
+
+            .store-button {
+                background: none;
+                padding: 0;
+                animation: none;
+            }
+
+            .store-button::before {
+                display: none;
+            }
+
+            .store-badge {
+                border-radius: 0;
+                box-shadow: none;
+            }
         }
 
         @media (min-width: 768px) {
