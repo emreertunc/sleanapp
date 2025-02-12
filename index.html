@@ -150,10 +150,64 @@
             margin-bottom: 10px;
         }
 
+        .store-button {
+            position: relative;
+            display: inline-block;
+            padding: 2px;
+            background: linear-gradient(
+                45deg,
+                #EC00B8,
+                #0066FF,
+                #EC00B8
+            );
+            background-size: 400%;
+            border-radius: 13px;
+            animation: animate 20s linear infinite;
+            overflow: hidden;
+        }
+
+        .store-button::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(
+                45deg,
+                #EC00B8,
+                #0066FF,
+                #EC00B8
+            );
+            background-size: 400%;
+            border-radius: 13px;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s;
+            animation: animate 20s linear infinite;
+        }
+
+        .store-button:hover::before {
+            opacity: 1;
+        }
+
         .store-badge {
-            height: 80px;
-            margin-top: 40px;
             display: block;
+            background: white;
+            border-radius: 13px;
+            position: relative;
+            z-index: 1;
+            height: 80px;
+            margin: 0;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: 400% 0;
+            }
         }
 
         .app-preview {
