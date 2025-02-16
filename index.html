@@ -451,6 +451,42 @@
         .screenshot:hover {
             opacity: 0.8;
         }
+
+        .collapsible {
+            background-color: var(--section-bg);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--section-bg);
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -647,54 +683,58 @@
                 </section>
 
                 <section>
-                    <h2>iOS Ekran Görüntüleri</h2>
-                    <div class="screenshots">
-                        <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 5"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 7"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 8"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 6"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 9"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 10"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 4"
-                            class="screenshot">
+                    <button type="button" class="collapsible">iOS Ekran Görüntüleri</button>
+                    <div class="collapsible-content">
+                        <div class="screenshots">
+                            <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 5"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 7"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 8"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 6"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 9"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 10"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 4"
+                                class="screenshot">
+                        </div>
                     </div>
                 </section>
 
                 <section>
-                    <h2>iPadOS Ekran Görüntüleri</h2>
-                    <div class="screenshots">
-                        <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 12"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 16"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 13"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 14"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 18"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 19"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 17"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 20"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 21"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 15"
-                            class="screenshot">
+                    <button type="button" class="collapsible">iPadOS Ekran Görüntüleri</button>
+                    <div class="collapsible-content">
+                        <div class="screenshots">
+                            <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 12"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 16"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 13"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 14"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 18"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 19"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 17"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 20"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 21"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 15"
+                                class="screenshot">
+                        </div>
                     </div>
                 </section>
 
@@ -898,54 +938,58 @@
                 </section>
 
                 <section>
-                    <h2>iOS Screenshots</h2>
-                    <div class="screenshots">
-                        <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 5"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 7"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 8"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 6"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 9"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 10"
-                            class="screenshot">
-                        <img src="images/iphone_14_pro_max_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 4"
-                            class="screenshot">
+                    <button type="button" class="collapsible">iOS Screenshots</button>
+                    <div class="collapsible-content">
+                        <div class="screenshots">
+                            <img src="images/iphone_14_pro_max_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 5"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 2"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 3"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 7"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 8"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 6"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 9"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 10"
+                                class="screenshot">
+                            <img src="images/iphone_14_pro_max_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 4"
+                                class="screenshot">
+                        </div>
                     </div>
                 </section>
 
                 <section>
-                    <h2>iPadOS Screenshots</h2>
-                    <div class="screenshots">
-                        <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 12"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 16"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 13"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 14"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 18"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 19"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 17"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 20"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 21"
-                            class="screenshot">
-                        <img src="images/ipad_pro_13_inch_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 15"
-                            class="screenshot">
+                    <button type="button" class="collapsible">iPadOS Screenshots</button>
+                    <div class="collapsible-content">
+                        <div class="screenshots">
+                            <img src="images/ipad_pro_13_inch_ss_1.png" alt="Slean Uygulama Ekran Görüntüsü 12"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_4.png" alt="Slean Uygulama Ekran Görüntüsü 16"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_2.png" alt="Slean Uygulama Ekran Görüntüsü 13"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_3.png" alt="Slean Uygulama Ekran Görüntüsü 14"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_6.png" alt="Slean Uygulama Ekran Görüntüsü 18"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_7.png" alt="Slean Uygulama Ekran Görüntüsü 19"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_5.png" alt="Slean Uygulama Ekran Görüntüsü 17"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_8.png" alt="Slean Uygulama Ekran Görüntüsü 20"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_9.png" alt="Slean Uygulama Ekran Görüntüsü 21"
+                                class="screenshot">
+                            <img src="images/ipad_pro_13_inch_ss_10.png" alt="Slean Uygulama Ekran Görüntüsü 15"
+                                class="screenshot">
+                        </div>
                     </div>
                 </section>
 
@@ -1033,6 +1077,22 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 modal.style.display = "none";
+            }
+        });
+
+        // Collapsible için JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
             }
         });
     </script>
