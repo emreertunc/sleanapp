@@ -103,6 +103,29 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        .screenshot-pair {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .screenshot-pair .screenshot {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .screenshot-pair {
+                gap: 10px;
+            }
+        }
+
         .contact {
             text-align: center;
         }
@@ -685,11 +708,13 @@
                 <section>
                     <button type="button" class="collapsible">iOS Ekran Görüntüleri</button>
                     <div class="collapsible-content">
-                        <div class="screenshots">
+                        <div class="screenshot-pair">
                             <img src="images/iphone_ss_turkish/1.png" alt="Slean Uygulama Ekran Görüntüsü 1"
                                 class="screenshot">
                             <img src="images/iphone_ss_turkish/2.png" alt="Slean Uygulama Ekran Görüntüsü 2"
                                 class="screenshot">
+                        </div>
+                        <div class="screenshot-grid">
                             <img src="images/iphone_ss_turkish/3.png" alt="Slean Uygulama Ekran Görüntüsü 3"
                                 class="screenshot">
                             <img src="images/iphone_ss_turkish/4.png" alt="Slean Uygulama Ekran Görüntüsü 4"
@@ -934,11 +959,13 @@
                 <section>
                     <button type="button" class="collapsible">iOS Screenshots</button>
                     <div class="collapsible-content">
-                        <div class="screenshots">
+                        <div class="screenshot-pair">
                             <img src="images/iphone_ss_english/1.png" alt="Slean App Screenshot 1"
                                 class="screenshot">
                             <img src="images/iphone_ss_english/2.png" alt="Slean App Screenshot 2"
                                 class="screenshot">
+                        </div>
+                        <div class="screenshot-grid">
                             <img src="images/iphone_ss_english/3.png" alt="Slean App Screenshot 3"
                                 class="screenshot">
                             <img src="images/iphone_ss_english/4.png" alt="Slean App Screenshot 4"
