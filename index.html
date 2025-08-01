@@ -1040,6 +1040,9 @@
                 trBtn.classList.remove('active');
                 enBtn.classList.add('active');
             }
+            
+            // Re-initialize collapsibles after language change
+            setTimeout(initializeCollapsibles, 100);
         }
 
         // Tarayıcı dilini kontrol et ve ona göre içeriği göster
@@ -1082,23 +1085,32 @@
 
         // Collapsible için JavaScript
         document.addEventListener('DOMContentLoaded', function() {
+            initializeCollapsibles();
+        });
+
+        function initializeCollapsibles() {
             var coll = document.getElementsByClassName("collapsible");
             for (var i = 0; i < coll.length; i++) {
+                // Remove existing listeners to prevent duplicates
+                coll[i].removeEventListener("click", toggleCollapsible);
+                coll[i].removeEventListener("touchstart", toggleCollapsible);
+                
+                // Add new listeners
                 coll[i].addEventListener("click", toggleCollapsible);
                 coll[i].addEventListener("touchstart", toggleCollapsible, {passive: true});
             }
+        }
 
-            function toggleCollapsible(e) {
-                e.preventDefault(); 
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
+        function toggleCollapsible(e) {
+            e.preventDefault(); 
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
             }
-        });
+        }
     </script>
 </body>
 
