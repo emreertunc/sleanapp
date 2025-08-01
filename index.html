@@ -1100,19 +1100,26 @@
 
         // Collapsible için JavaScript
         document.addEventListener('DOMContentLoaded', function() {
-            initializeCollapsibles();
+            // Don't initialize here, wait for language to be set
         });
 
         function initializeCollapsibles() {
+            // Clear any existing state first
             var coll = document.getElementsByClassName("collapsible");
             for (var i = 0; i < coll.length; i++) {
+                // Reset any active state
+                coll[i].classList.remove("active");
+                var content = coll[i].nextElementSibling;
+                if (content) {
+                    content.style.maxHeight = null;
+                }
+                
                 // Remove existing listeners to prevent duplicates
                 coll[i].removeEventListener("click", toggleCollapsible);
                 coll[i].removeEventListener("touchstart", toggleCollapsible);
                 
-                // Add new listeners
+                // Only add click listener - avoid touch/click conflicts on mobile
                 coll[i].addEventListener("click", toggleCollapsible);
-                coll[i].addEventListener("touchstart", toggleCollapsible, {passive: true});
             }
         }
 
