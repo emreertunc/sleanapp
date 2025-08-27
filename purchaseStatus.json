@@ -2,5 +2,6 @@
     "isCoffeeButtonActive": 1,
     "isSubsActive": 0,
     "dailyCount": 8,
-    "showUserId": 1
+    "showUserId": 1,
+    "forceUpdateVersion": 4.0
 }  
