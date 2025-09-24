@@ -8,5 +8,6 @@
     "monthlyGift_RCpro": 1,
     "monthlyGift_Pro": 10,
     "isTokenPurchaseActive": 1,
-    "isPrmpActive": 0
+    "isPrmpActive": 0,
+    "isNewCall": 1
 }  
