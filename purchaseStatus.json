@@ -10,5 +10,7 @@
     "isTokenPurchaseActive": 1,
     "isPrmpActive": 0,
     "isNewCall": 1,
-    "showWhatsNew": 0
+    "showWhatsNew": 0,
+    "notificationEngagementInterval": 30,
+    "notificationInactivityTreshold": 60
 }  
