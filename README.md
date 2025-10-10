@@ -1,5 +1,11 @@
 # Slean - iOS Media Management App
 
+<p align="center">
+  <a href="[https://apps.apple.com/app/sneakshare/id6740745888](https://apps.apple.com/tr/app/slean/id6740009265)">
+    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" height="58">
+  </a>
+</p>
+
 Slean is a iOS app designed to help you organize your photo and video collection.
 
 https://emreertunc.github.io/sleanapp/
