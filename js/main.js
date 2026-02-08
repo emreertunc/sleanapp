@@ -5,8 +5,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initSwiper();
-    initGSAP();
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    var yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    try {
+        initGSAP();
+    } catch (e) {
+        // Fallback: show all hidden elements if GSAP fails
+        document.querySelectorAll('.hero-content,.hero-phone,.feature-card,.ai-phone-wrapper,.ai-content,.section-header,.cta-content,.comparison-table,.privacy-detail-card').forEach(function(el) {
+            el.style.opacity = '1';
+        });
+    }
 });
 
 /* --- Navbar --- */
