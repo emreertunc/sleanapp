@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initSwiper();
     initGSAP();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 
 /* --- Navbar --- */
