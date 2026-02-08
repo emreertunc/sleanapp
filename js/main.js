@@ -148,7 +148,7 @@ function initGSAP() {
             opacity: 1,
             y: 0,
             duration: 0.6,
-            delay: i * 0.08,
+            delay: i * 0.06,
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: card,
@@ -159,7 +159,7 @@ function initGSAP() {
         gsap.from(card, {
             y: 50,
             duration: 0.6,
-            delay: i * 0.08,
+            delay: i * 0.06,
             scrollTrigger: {
                 trigger: card,
                 start: 'top 88%',
@@ -212,28 +212,6 @@ function initGSAP() {
         ease: 'power2.out',
         scrollTrigger: {
             trigger: '.ai-examples',
-            start: 'top 85%',
-            once: true,
-        },
-    });
-
-    // Trust banner
-    gsap.to('.trust-banner', {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '.trust-banner',
-            start: 'top 85%',
-            once: true,
-        },
-    });
-    gsap.from('.trust-banner', {
-        y: 30,
-        duration: 0.7,
-        scrollTrigger: {
-            trigger: '.trust-banner',
             start: 'top 85%',
             once: true,
         },

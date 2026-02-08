@@ -26,7 +26,7 @@
     --color-green-dark: #059669;
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --container-max: 1200px;
-    --section-spacing: 140px;
+    --section-spacing: 80px;
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
@@ -78,27 +78,11 @@ a {
     overflow: hidden;
 }
 
-.phone-notch {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 28px;
-    background: #000;
-    border-radius: 100px;
-    z-index: 10;
-}
-
 .phone-screen {
     width: 100%;
     height: auto;
     border-radius: 32px;
     display: block;
-}
-
-.phone-frame-sm {
-    max-width: 280px;
 }
 
 /* --- Navbar --- */
@@ -294,7 +278,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
 }
 
 .btn-primary {
@@ -326,6 +310,83 @@ a {
     border-radius: 16px;
 }
 
+/* App Store Badge */
+.app-store-badge {
+    display: inline-flex;
+    width: fit-content;
+    position: relative;
+    padding: 2px;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Rotating border glow */
+.app-store-badge::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.app-store-badge .badge-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.app-store-badge .badge-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(200%, 400px);
+    height: max(200%, 400px);
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 80deg,
+        var(--color-orange) 120deg,
+        var(--color-amber) 180deg,
+        var(--color-orange) 240deg,
+        transparent 280deg,
+        transparent 360deg
+    );
+    animation: borderSpin 5s linear infinite;
+}
+
+.app-store-badge .badge-glow::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #000;
+    border-radius: 12px;
+}
+
+@keyframes borderSpin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.app-store-badge img {
+    height: 72px;
+    width: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.app-store-badge:hover {
+    transform: translateY(-2px);
+}
+
+.app-store-badge-lg img {
+    height: 80px;
+}
+
 .hero-meta {
     font-size: 13px;
     color: var(--color-text-muted);
@@ -337,7 +398,7 @@ a {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
 .trust-badge {
@@ -437,10 +498,19 @@ a {
     50% { opacity: 0.3; transform: scaleY(0.6); }
 }
 
+/* --- Section Dividers --- */
+.features,
+.ai-section,
+.privacy-section,
+.screenshots-section,
+.cta-section {
+    border-top: 1px solid var(--color-border);
+}
+
 /* --- Section Headers --- */
 .section-header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
 }
 
 .section-tag {
@@ -518,6 +588,16 @@ a {
 }
 
 /* Feature icon color variants */
+.feature-card[data-feature="duplicates"] .feature-icon {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.15);
+    color: var(--color-orange);
+}
+.feature-card[data-feature="compression"] .feature-icon {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.15);
+    color: var(--color-orange);
+}
 .feature-card[data-feature="crop"] .feature-icon {
     background: rgba(59, 130, 246, 0.1);
     border-color: rgba(59, 130, 246, 0.15);
@@ -548,13 +628,10 @@ a {
     border-color: rgba(56, 189, 248, 0.15);
     color: #38bdf8;
 }
-
-.feature-card-large {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    align-items: center;
+.feature-card[data-feature="darkmode"] .feature-icon {
+    background: rgba(148, 163, 184, 0.1);
+    border-color: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
 }
 
 .feature-icon {
@@ -571,73 +648,16 @@ a {
 }
 
 .feature-card h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: -0.01em;
 }
 
 .feature-card p {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.65;
-}
-
-.feature-card-image {
-    display: flex;
-    justify-content: center;
-}
-
-/* --- Trust Banner --- */
-.trust-banner-section {
-    padding: 60px 0;
-}
-
-.trust-banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 32px 48px;
-    background: linear-gradient(135deg, rgba(52, 211, 153, 0.06), rgba(52, 211, 153, 0.02));
-    border: 1px solid rgba(52, 211, 153, 0.1);
-    border-radius: var(--radius-xl);
-}
-
-.trust-banner-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.trust-banner-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(52, 211, 153, 0.1);
-    border-radius: 12px;
-    color: var(--color-green);
-    flex-shrink: 0;
-}
-
-.trust-banner-item strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 1px;
-}
-
-.trust-banner-item span {
-    font-size: 13px;
-    color: var(--color-text-muted);
-}
-
-.trust-banner-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(52, 211, 153, 0.15);
 }
 
 /* --- AI Section --- */
@@ -743,7 +763,7 @@ a {
 /* Comparison Table */
 .comparison-table {
     max-width: 740px;
-    margin: 0 auto 60px;
+    margin: 0 auto 48px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--color-border);
@@ -1042,7 +1062,7 @@ a {
     color: var(--color-text-muted);
 }
 
-/* --- Noise texture overlay for premium feel --- */
+/* --- Noise texture overlay --- */
 body::before {
     content: '';
     position: fixed;
@@ -1057,8 +1077,7 @@ body::before {
 }
 
 /* ========================================
-   GSAP Animation Prep - Elements hidden
-   until JS reveals them
+   GSAP Animation Prep
    ======================================== */
 .hero-content,
 .hero-phone,
@@ -1067,7 +1086,6 @@ body::before {
 .ai-content,
 .section-header,
 .cta-content,
-.trust-banner,
 .comparison-table,
 .privacy-detail-card {
     opacity: 0;
@@ -1080,7 +1098,7 @@ body::before {
 /* Tablet */
 @media (max-width: 1024px) {
     :root {
-        --section-spacing: 100px;
+        --section-spacing: 64px;
     }
 
     .hero-container {
@@ -1103,32 +1121,16 @@ body::before {
         justify-content: center;
     }
 
+    .hero-trust-badges {
+        justify-content: center;
+    }
+
     .hero-phone {
         max-width: 280px;
     }
 
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .feature-card-large {
-        grid-column: span 2;
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .feature-card-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-card-image {
-        order: -1;
-    }
-
-    .feature-card-image .phone-frame-sm {
-        max-width: 220px;
     }
 
     .ai-layout {
@@ -1156,23 +1158,12 @@ body::before {
     .privacy-details-grid {
         grid-template-columns: 1fr;
     }
-
-    .trust-banner {
-        flex-direction: column;
-        gap: 20px;
-        padding: 28px 24px;
-    }
-
-    .trust-banner-divider {
-        width: 100%;
-        height: 1px;
-    }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
     :root {
-        --section-spacing: 80px;
+        --section-spacing: 56px;
     }
 
     .container {
@@ -1261,22 +1252,6 @@ body::before {
         grid-template-columns: 1fr;
     }
 
-    .feature-card-large {
-        grid-column: span 1;
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .feature-card-large .feature-card-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-card-large .feature-card-image {
-        order: -1;
-    }
-
     .feature-card {
         padding: 28px 24px;
         border-radius: var(--radius-lg);
@@ -1299,11 +1274,6 @@ body::before {
         padding: 12px 16px;
     }
 
-    .privacy-card {
-        padding: 32px 24px;
-        border-radius: var(--radius-lg);
-    }
-
     .comparison-col {
         font-size: 12px;
         padding: 12px 10px;
@@ -1322,14 +1292,6 @@ body::before {
 
     .privacy-detail-card {
         padding: 28px 20px;
-    }
-
-    .trust-banner {
-        border-radius: var(--radius-lg);
-    }
-
-    .hero-trust-badges {
-        justify-content: center;
     }
 
     .swiper-slide {
