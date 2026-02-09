@@ -18,8 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
     <style>
 /* ========================================
    Slean Landing Page - Styles
@@ -117,13 +115,13 @@ a {
     z-index: 1000;
     padding: 16px 0;
     transition: all 0.3s ease;
-}
-
-.navbar.scrolled {
     background: rgba(9, 9, 11, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-border);
+}
+
+.navbar.scrolled {
     padding: 10px 0;
 }
 
@@ -487,6 +485,12 @@ a {
     position: relative;
     z-index: 2;
     max-width: 320px;
+    animation: phoneFloat 3s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 .hero-phone-glow {
@@ -937,21 +941,26 @@ a {
     overflow: hidden;
 }
 
-.screenshots-swiper {
+.screenshots-track {
+    display: flex;
+    gap: 24px;
     padding: 20px 0 60px;
-    overflow: visible;
+    animation: scrollCarousel 40s linear infinite;
+    width: max-content;
 }
 
-.screenshots-swiper .swiper-wrapper {
-    align-items: center;
+.screenshots-track:hover {
+    animation-play-state: paused;
 }
 
-.swiper-slide {
+@keyframes scrollCarousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.screenshot-item {
+    flex-shrink: 0;
     width: 280px;
-    transition: all 0.4s ease;
-}
-
-.screenshot-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -962,18 +971,6 @@ a {
     font-size: 14px;
     font-weight: 500;
     color: var(--color-text-muted);
-    transition: color 0.3s;
-}
-
-.swiper-slide-active .screenshot-label {
-    color: var(--color-text);
-}
-
-.swiper-slide-active .phone-frame {
-    box-shadow:
-        0 0 0 2px rgba(255, 255, 255, 0.12),
-        0 30px 70px -15px rgba(0, 0, 0, 0.5),
-        0 0 50px rgba(249, 115, 22, 0.12);
 }
 
 /* --- CTA --- */
@@ -1306,7 +1303,7 @@ body::before {
         padding: 28px 20px;
     }
 
-    .swiper-slide {
+    .screenshot-item {
         width: 240px;
     }
 
@@ -1672,81 +1669,80 @@ body::before {
                 <p class="section-subtitle">A clean, intuitive interface designed to make photo management effortless.</p>
             </div>
         </div>
-        <div class="swiper screenshots-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/gallery-light.png" alt="Gallery View - Light Mode" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Gallery View</span>
-                    </div>
+        <div class="screenshots-track">
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/gallery-light.png" alt="Gallery View" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Gallery View</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/gallery-dark.png" alt="Gallery View - Dark Mode" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Dark Mode</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/gallery-dark.png" alt="Dark Mode" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Dark Mode</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/duplicates.png" alt="Duplicate Detection" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Duplicate Detection</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/duplicates.png" alt="Duplicate Detection" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Duplicate Detection</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/ai-editor.png" alt="AI Photo Editor" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">AI Photo Editor</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/ai-editor.png" alt="AI Photo Editor" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">AI Photo Editor</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/compression.png" alt="Smart Compression" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Compression</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/compression.png" alt="Compression" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Compression</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/crop.png" alt="Crop & Resize" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Crop & Resize</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/crop.png" alt="Crop & Resize" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Crop & Resize</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/video-player.png" alt="Video Player" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Video Player</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/video-player.png" alt="Video Player" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Video Player</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/statistics.png" alt="Statistics Dashboard" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">Statistics</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/statistics.png" alt="Statistics" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Statistics</span>
                 </div>
-                <div class="swiper-slide">
-                    <div class="screenshot-slide">
-                        <div class="phone-frame">
-                            <img src="images/screenshots/on-this-day.png" alt="On This Day" class="phone-screen" loading="lazy">
-                        </div>
-                        <span class="screenshot-label">On This Day</span>
-                    </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/on-this-day.png" alt="On This Day" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">On This Day</span>
                 </div>
-            </div>
+                <!-- Duplicated for seamless loop -->
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/gallery-light.png" alt="Gallery View" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Gallery View</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/gallery-dark.png" alt="Dark Mode" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Dark Mode</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/duplicates.png" alt="Duplicate Detection" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Duplicate Detection</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/ai-editor.png" alt="AI Photo Editor" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">AI Photo Editor</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/compression.png" alt="Compression" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Compression</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/crop.png" alt="Crop & Resize" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Crop & Resize</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/video-player.png" alt="Video Player" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Video Player</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/statistics.png" alt="Statistics" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">Statistics</span>
+                </div>
+                <div class="screenshot-item">
+                    <div class="phone-frame"><img src="images/screenshots/on-this-day.png" alt="On This Day" class="phone-screen" loading="lazy"></div>
+                    <span class="screenshot-label">On This Day</span>
+                </div>
         </div>
     </section>
 
@@ -1786,7 +1782,6 @@ body::before {
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
@@ -1796,7 +1791,6 @@ body::before {
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
-    initSwiper();
 
     var yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -1831,26 +1825,6 @@ function initNavbar() {
             navLinks.classList.remove('active');
             document.body.style.overflow = '';
         });
-    });
-}
-
-function initSwiper() {
-    new Swiper('.screenshots-swiper', {
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        spaceBetween: 24,
-        loop: true,
-        speed: 600,
-        grabCursor: true,
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: true,
-        },
-        breakpoints: {
-            768: {
-                spaceBetween: 32,
-            },
-        },
     });
 }
 
