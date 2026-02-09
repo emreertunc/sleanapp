@@ -69,6 +69,11 @@ function initSwiper() {
 function initGSAP() {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Hide elements for animation (only when GSAP is available)
+    document.querySelectorAll('.hero-content,.hero-phone,.feature-card,.ai-phone-wrapper,.ai-content,.section-header,.cta-content,.comparison-table,.privacy-detail-card').forEach(function(el) {
+        el.style.opacity = '0';
+    });
+
     // Hero animations
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 

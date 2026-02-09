@@ -464,6 +464,12 @@ a {
     position: relative;
     z-index: 2;
     max-width: 320px;
+    animation: phoneFloat 3s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 .hero-phone-glow {
@@ -1077,19 +1083,8 @@ body::before {
 }
 
 /* ========================================
-   GSAP Animation Prep
+   GSAP Animation Prep - set by JS only
    ======================================== */
-.hero-content,
-.hero-phone,
-.feature-card,
-.ai-phone-wrapper,
-.ai-content,
-.section-header,
-.cta-content,
-.comparison-table,
-.privacy-detail-card {
-    opacity: 0;
-}
 
 /* ========================================
    Responsive
