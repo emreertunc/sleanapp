@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initSwiper();
+    initFAQ();
 
     var yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -316,5 +317,30 @@ function initGSAP() {
             start: 'top 85%',
             once: true,
         },
+    });
+}
+
+/* --- FAQ Accordion --- */
+function initFAQ() {
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = btn.closest('.faq-item');
+            var answer = item.querySelector('.faq-answer');
+            var isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+                openItem.classList.remove('open');
+                openItem.querySelector('.faq-answer').classList.remove('open');
+                openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
     });
 }
